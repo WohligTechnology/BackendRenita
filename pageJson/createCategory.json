@@ -1,17 +1,17 @@
 {
-    "title": "Create User",
-    "jsonPage": "userView",
+    "title": "Create Category",
+    "jsonPage": "viewCategory",
     "desciption": "",
     "pageType": "create",
     "fields": [{
-        "name": "Image",
-        "type": "image",
-        "tableRef": "image",
-        "placeholder": "Enter Image",
+        "name": "Name",
+        "type": "text",
+        "tableRef": "name",
+        "placeholder": "Enter Name",
         "id": "input1",
         "validation": ["required", "trim", "unique"],
         "url": ""
-    },{
+    }, {
         "name": "Status",
         "type": "select",
         "tableRef": "status",
@@ -31,10 +31,10 @@
         "action": "submitUser"
     }, {
         "name": "cancel",
-        "stateName": "page({jsonName:'viewSlider'})"
+        "stateName": "page({jsonName:'viewCategory'})"
     }],
 
     "apiCall": {
-        "url": "homeslider/savedata"
+        "url": "Category/savedata"
     }
 }

@@ -1,34 +1,30 @@
 {
-    "title": "Edit Slider",
-    "jsonPage": "viewSlider",
+    "title": "Create PopularPost",
+    "jsonPage": "viewPopularPost",
     "desciption": "",
-    "pageType": "edit",
-    "urlFields": ["_id"],
+    "pageType": "create",
     "fields": [{
-        "name": "Id",
-        "type": "hidden",
-        "tableRef": "_id",
-        "placeholder": "Enter name",
+        "name": "Name",
+        "type": "text",
+        "tableRef": "name",
+        "placeholder": "Enter Name",
         "id": "input1",
         "validation": ["required", "trim", "unique"],
-        "url": "",
-        "model": "_id"
-    },{
+        "url": ""
+    }, {
         "name": "Image",
         "type": "image",
         "tableRef": "image",
-        "placeholder": "Enter name",
+        "placeholder": "Enter Image",
         "id": "input1",
         "validation": ["required", "trim", "unique"],
-        "url": "",
-        "model": "image"
+        "url": ""
     },{
         "name": "Status",
         "type": "select",
         "tableRef": "status",
         "placeholder": "Enter status",
         "id": "input3",
-        "model": "status",
         "validation": ["required", "trim", "unique"],
         "url": [{
             "value": true,
@@ -38,18 +34,15 @@
             "name": "Disable"
         }]
     }],
+    "action": [{
+        "name": "submit",
+        "action": "submitUser"
+    }, {
+        "name": "cancel",
+        "stateName": "page({jsonName:'viewPopularPost'})"
+    }],
+
     "apiCall": {
-        "url": "homeslider/savedata",
-        "params": "_id"
-    },
-    "preApi": {
-        "url": "homeslider/getOne",
-        "params": "_id"
-    },
-    "sidemenu": [{
-        "url": "",
-        "anchor": "",
-        "state": "",
-        "action": ""
-    }]
+        "url": "PopularPost/savedata"
+    }
 }

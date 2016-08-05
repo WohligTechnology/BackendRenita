@@ -1,17 +1,17 @@
 {
-    "title": "All Doctors",
+    "title": "View Blogs",
     "desciption": "",
     "pageType": "view",
     "fields": [{
         "name": "Name",
-
+        "type": "text",
         "isSort": "",
         "tableRef": "name"
     }, {
-        "name": "Specialist",
-
+        "name": "View",
+        "type": "text",
         "isSort": "",
-        "tableRef": "specialist"
+        "tableRef": "view"
     }, {
         "name": "Image",
         "type": "image",
@@ -23,25 +23,25 @@
         "icon": "mode_edit",
         "color": "blue",
         "action": "redirect",
-        "jsonPage": "editDoctor",
+        "jsonPage": "editBlog",
         "fieldsToSend": ["_id"],
-        "callFindOne": "doctor/getone"
+        "callFindOne": "Blog/getone"
     }, {
         "name": "delete",
         "icon": "delete",
         "color": "red",
         "action": "apiCallConfirm",
-        "title": "Delete Doctor",
-        "content": "Are you sure you want to delete Doctor?",
-        "api": "doctor/delete",
+        "title": "Delete Blog",
+        "content": "Are you sure you want to delete Blog?",
+        "api": "Blog/delete",
         "fieldsToSend": [{
             "name": "_id",
             "value": "_id"
         }]
     }],
     "apiCall": {
-        "url": "doctor/getLimited",
+        "url": "Blog/getLimited",
         "params": ""
     },
-    "createButtonState": "page({jsonName:'createDoctor'})"
+    "createButtonState": "page({jsonName:'createBlog'})"
 }

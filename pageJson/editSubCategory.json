@@ -1,6 +1,6 @@
 {
-    "title": "Edit Doctor",
-    "jsonPage": "viewDoctor",
+    "title": "Edit Sub-Category",
+    "jsonPage": "viewSubCategory",
     "desciption": "",
     "pageType": "edit",
     "urlFields": ["_id"],
@@ -14,37 +14,55 @@
         "url": "",
         "model": "_id"
     },{
-        "name": "name",
+        "name": "Category-Name",
         "type": "text",
-        "tableRef": "name",
-        "placeholder": "Enter name",
+        "tableRef": "category.name",
+        "placeholder": "Enter Category-Name",
         "id": "input1",
         "validation": ["required", "trim", "unique"],
         "url": "",
-        "model": "name"
+        "model": "category.name"
     },{
-        "name": "Specialist",
+        "name": "Description title",
         "type": "text",
-        "tableRef": "specialist",
-        "placeholder": "Enter Specialist",
+        "tableRef": "descriptionTitle",
+        "placeholder": "Enter Description-Title",
         "id": "input1",
         "validation": ["required", "trim", "unique"],
         "url": "",
-        "model": "specialist"
+        "model": "descriptionTitle"
     },{
         "name": "Desciption",
-        "type": "text",
-        "tableRef": "desciption",
-        "placeholder": "Enter Desciption",
+        "type": "textarea",
+        "tableRef": "description",
+        "placeholder": "Enter Description",
         "id": "input1",
         "validation": ["required", "trim", "unique"],
         "url": "",
-        "model": "desciption"
+        "model": "description"
+    },{
+        "name": "Sub-Category-Name",
+        "type": "text",
+        "tableRef": "subCatName",
+        "placeholder": "Enter Sub-Category-Name",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "subCatName"
+    },{
+        "name": "Sub-Category-Description",
+        "type": "textarea",
+        "tableRef": "subCatDescription",
+        "placeholder": "Enter Sub-Category-Description",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "subCatDescription"
     },{
         "name": "Image",
         "type": "image",
         "tableRef": "image",
-        "placeholder": "Enter name",
+        "placeholder": "Enter Image",
         "id": "input1",
         "validation": ["required", "trim", "unique"],
         "url": "",
@@ -66,11 +84,11 @@
         }]
     }],
     "apiCall": {
-        "url": "doctor/savedata",
+        "url": "SubCategory/savedatadata",
         "params": "_id"
     },
     "preApi": {
-        "url": "doctor/getOne",
+        "url": "SubCategory/getOne",
         "params": "_id"
     },
     "sidemenu": [{

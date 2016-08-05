@@ -3,15 +3,13 @@
     "desciption": "",
     "pageType": "view",
     "fields": [{
-        "name": "Name",
-
+        "name": "Category-Name",
         "isSort": "",
-        "tableRef": "name"
+        "tableRef": "category.name"
     }, {
-        "name": "Specialist",
-
+        "name": "Sub-Category-Name",
         "isSort": "",
-        "tableRef": "specialist"
+        "tableRef": "subCatName"
     }, {
         "name": "Image",
         "type": "image",
@@ -23,25 +21,25 @@
         "icon": "mode_edit",
         "color": "blue",
         "action": "redirect",
-        "jsonPage": "editDoctor",
+        "jsonPage": "editSubCategory",
         "fieldsToSend": ["_id"],
-        "callFindOne": "doctor/getone"
+        "callFindOne": "SubCategory/getone"
     }, {
         "name": "delete",
         "icon": "delete",
         "color": "red",
         "action": "apiCallConfirm",
-        "title": "Delete Doctor",
-        "content": "Are you sure you want to delete Doctor?",
-        "api": "doctor/delete",
+        "title": "Delete SubCategory",
+        "content": "Are you sure you want to delete SubCategory?",
+        "api": "SubCategory/delete",
         "fieldsToSend": [{
             "name": "_id",
             "value": "_id"
         }]
     }],
     "apiCall": {
-        "url": "doctor/getLimited",
+        "url": "SubCategory/getLimited",
         "params": ""
     },
-    "createButtonState": "page({jsonName:'createDoctor'})"
+    "createButtonState": "page({jsonName:'createSubCategory'})"
 }

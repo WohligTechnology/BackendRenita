@@ -11,19 +11,25 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     $scope.user = '';
     $scope.submitLogin = function(user) {
-        NavigationService.submitLogin(user, function(data) {
-            console.log(data);
-            if (data.value === true) {
-                $state.go("page", {
-                    jsonName: "viewMovie"
-                });
-                $.jStorage.set("user", data);
-            } else if (data.value === false) {
-                $scope.successmsg = "Email or Password is wrong";
-            }
-        }, function() {
-            console.log("Fail");
-        });
+      $state.go("page", {
+                  jsonName: "viewBlog"
+          });
+        // NavigationService.submitLogin(user, function(data) {
+        //     console.log(data);
+        //     $state.go("page", {
+        //             jsonName: "viewBlog"
+        //     });
+        //     // if (data.value === true) {
+        //     //     $state.go("page", {
+        //     //         jsonName: "viewMovie"
+        //     //     });
+        //     //     $.jStorage.set("user", data);
+        //     // } else if (data.value === false) {
+        //     //     $scope.successmsg = "Email or Password is wrong";
+        //     // }
+        // }, function() {
+        //     console.log("Fail");
+        // });
     };
 })
 
@@ -377,7 +383,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         console.log($scope.formData);
 
         // CALL GENERAL API
-        NavigationService.saveApi($scope.formData, $scope.apiName, function(data) {
+        NavigationService.savedataApi($scope.formData, $scope.apiName, function(data) {
             window.history.back();
             // if ($scope.json.action[0].submitUrl && $scope.urlid && !$scope.urlid2) {
             //     $location.url("/page/" + $scope.json.action[0].submitUrl + $scope.urlid);
@@ -398,7 +404,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     };
 
-    $scope.saveWithTag = function(tags) {
+    $scope.savedataWithTag = function(tags) {
         console.log($scope.formData);
         console.log(tags);
     };
@@ -452,10 +458,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }
     }
 
-    $scope.saveProject = function(project) {
-        NavigationService.saveProject(project, function(data) {
+    $scope.savedataProject = function(project) {
+        NavigationService.savedataProject(project, function(data) {
             project._id = data.data._id;
-            showToast("Project Saved Successfully");
+            showToast("Project savedatad Successfully");
         }, function() {
             showToast("Error saving the Project");
         });
@@ -537,7 +543,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 newOrder = _.pluck($scope.apis, "_id");
                 var newProject = _.cloneDeep($scope.project);
                 newProject.Api = newOrder;
-                NavigationService.saveProject(newProject, function() {
+                NavigationService.savedataProject(newProject, function() {
                     showToast("API Ordered");
                 }, function() {
                     showToast("Error Ordering API");
@@ -610,10 +616,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.apis.splice(index + 1, 0, newApi);
         $scope.expandApi(newApi);
     };
-    $scope.saveApi = function(api) {
-        NavigationService.saveApi(api, function(data) {
+    $scope.savedataApi = function(api) {
+        NavigationService.savedataApi(api, function(data) {
             api._id = data.data._id;
-            showToast("API saved Successfully");
+            showToast("API savedatad Successfully");
         }, function(err) {
             showToast("Error saving API");
         });

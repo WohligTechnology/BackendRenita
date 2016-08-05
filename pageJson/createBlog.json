@@ -1,6 +1,6 @@
 {
-    "title": "Create Doctor",
-    "jsonPage": "viewDoctor",
+    "title": "Create Blog",
+    "jsonPage": "viewBlog",
     "desciption": "",
     "pageType": "create",
     "fields": [{
@@ -12,10 +12,10 @@
         "validation": ["required", "trim", "unique"],
         "url": ""
     }, {
-        "name": "Specialist",
+        "name": "Views",
         "type": "text",
-        "tableRef": "specialist",
-        "placeholder": "Enter Specialist",
+        "tableRef": "views",
+        "placeholder": "Enter Views",
         "id": "input1",
         "validation": ["required", "trim", "unique"],
         "url": ""
@@ -55,10 +55,10 @@
         "action": "submitUser"
     }, {
         "name": "cancel",
-        "stateName": "page({jsonName:'viewDoctor'})"
+        "stateName": "page({jsonName:'viewBlog'})"
     }],
 
     "apiCall": {
-        "url": "doctor/savedata"
+        "url": "blog/savedata"
     }
 }

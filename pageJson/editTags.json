@@ -1,6 +1,6 @@
 {
-    "title": "Edit Slider",
-    "jsonPage": "viewSlider",
+    "title": "Edit Tags",
+    "jsonPage": "viewTags",
     "desciption": "",
     "pageType": "edit",
     "urlFields": ["_id"],
@@ -14,14 +14,14 @@
         "url": "",
         "model": "_id"
     },{
-        "name": "Image",
-        "type": "image",
-        "tableRef": "image",
+        "name": "name",
+        "type": "text",
+        "tableRef": "name",
         "placeholder": "Enter name",
         "id": "input1",
         "validation": ["required", "trim", "unique"],
         "url": "",
-        "model": "image"
+        "model": "name"
     },{
         "name": "Status",
         "type": "select",
@@ -39,11 +39,11 @@
         }]
     }],
     "apiCall": {
-        "url": "homeslider/savedata",
+        "url": "Tags/savedata",
         "params": "_id"
     },
     "preApi": {
-        "url": "homeslider/getOne",
+        "url": "Tags/getOne",
         "params": "_id"
     },
     "sidemenu": [{

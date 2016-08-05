@@ -68,7 +68,7 @@
         "stateName": "page({jsonName:'userView'})"
     }],
     "apiCall": {
-        "url": "user/saveData",
+        "url": "user/savedataData",
         "params": "_id"
     },
     "preApi": {

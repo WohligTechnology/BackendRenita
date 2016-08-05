@@ -21,7 +21,7 @@
         "icon": "delete",
         "color": "red",
         "action": "apiCallConfirm",
-        "title": "Delete User",
+        "title": "Delete Slider",
         "content": "Are you sure you want to delete Slider?",
         "api": "homeslider/delete",
         "fieldsToSend": [{
@@ -30,7 +30,7 @@
         }]
     }],
     "apiCall": {
-        "url": "homeslider/findLimited",
+        "url": "homeslider/getLimited",
         "params": ""
     },
     "createButtonState": "page({jsonName:'createSlider'})"

@@ -1,17 +1,11 @@
 {
-    "title": "All Doctors",
+    "title": "Popular Posts",
     "desciption": "",
     "pageType": "view",
     "fields": [{
         "name": "Name",
-
         "isSort": "",
         "tableRef": "name"
-    }, {
-        "name": "Specialist",
-
-        "isSort": "",
-        "tableRef": "specialist"
     }, {
         "name": "Image",
         "type": "image",
@@ -25,23 +19,23 @@
         "action": "redirect",
         "jsonPage": "editDoctor",
         "fieldsToSend": ["_id"],
-        "callFindOne": "doctor/getone"
+        "callFindOne": "PopularPost/getone"
     }, {
         "name": "delete",
         "icon": "delete",
         "color": "red",
         "action": "apiCallConfirm",
-        "title": "Delete Doctor",
-        "content": "Are you sure you want to delete Doctor?",
-        "api": "doctor/delete",
+        "title": "Delete PopularPost",
+        "content": "Are you sure you want to delete PopularPost?",
+        "api": "PopularPost/delete",
         "fieldsToSend": [{
             "name": "_id",
             "value": "_id"
         }]
     }],
     "apiCall": {
-        "url": "doctor/getLimited",
+        "url": "PopularPost/getLimited",
         "params": ""
     },
-    "createButtonState": "page({jsonName:'createDoctor'})"
+    "createButtonState": "page({jsonName:'createPopularPost'})"
 }

@@ -37,7 +37,7 @@
 <div class="" ng-if="pageInfo.totalitems"></div>
 
 
-        <uib-pagination ng-show="json.tableData.length>=0" ng-change="getMoreResults(true)" total-items="pageInfo.totalitems" ng-model="pagination.pagenumber" items-per-page="pagination.pagesize" ></uib-pagination>
+        <uib-pagination ng-show="json.tableData.length>0" ng-change="getMoreResults(true)" total-items="pageInfo.totalitems" ng-model="pagination.pagenumber" items-per-page="pagination.pagesize" ></uib-pagination>
 
     </md-list>
 
