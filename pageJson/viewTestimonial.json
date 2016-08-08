@@ -1,0 +1,40 @@
+{
+    "title": "Testimonial",
+    "desciption": "",
+    "pageType": "view",
+    "fields": [{
+        "name": "Name",
+        "isSort": "",
+        "tableRef": "name"
+    },{
+        "name": "Tag Name",
+        "isSort": "",
+        "tableRef": "tags"
+    }],
+    "action": [{
+        "name": "edit",
+        "icon": "mode_edit",
+        "color": "blue",
+        "action": "redirect",
+        "jsonPage": "editTestimonial",
+        "fieldsToSend": ["_id"],
+        "callFindOne": "Testimonial/getone"
+    }, {
+        "name": "delete",
+        "icon": "delete",
+        "color": "red",
+        "action": "apiCallConfirm",
+        "title": "Delete Tag",
+        "content": "Are you sure you want to delete Testimonial?",
+        "api": "Testimonial/delete",
+        "fieldsToSend": [{
+            "name": "_id",
+            "value": "_id"
+        }]
+    }],
+    "apiCall": {
+        "url": "Testimonial/getLimited",
+        "params": ""
+    },
+    "createButtonState": "page({jsonName:'createTestimonial'})"
+}

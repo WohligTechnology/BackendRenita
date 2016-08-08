@@ -48,7 +48,7 @@
 
             <div ng-if="field.type=='tinymceImage'">
                 <label>{{field.name}}</label>
-                <textarea ui-tinymce="tinymceOptions" ng-model="field.model"></textarea>
+                <textarea ui-tinymce="tinymceOptions" ng-model="json.editData[field.model]"></textarea>
             </div>
             <!-- // SELECT FROM TABLE -->
             <div ng-if="field.type=='selectFromTable'">

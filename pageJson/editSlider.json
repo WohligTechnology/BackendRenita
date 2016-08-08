@@ -18,6 +18,7 @@
         "type": "image",
         "tableRef": "image1",
         "option": "single",
+        "size":"1920 X 963",
         "placeholder": "Enter name",
         "id": "input1",
         "validation": ["required", "trim", "unique"],
@@ -26,6 +27,7 @@
     }, {
         "name": "Image2",
         "option": "single",
+        "size":"1920 X 963",
         "type": "image",
         "tableRef": "image2",
         "placeholder": "Enter Image",
