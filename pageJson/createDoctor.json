@@ -20,9 +20,9 @@
         "validation": ["required", "trim", "unique"],
         "url": ""
     }, {
-        "name": "Desciption",
-        "type": "text",
-        "tableRef": "desciption",
+        "name": "Description",
+        "type": "textarea",
+        "tableRef": "description",
         "placeholder": "Enter Desciption",
         "id": "input1",
         "validation": ["required", "trim", "unique"],
@@ -31,6 +31,7 @@
         "name": "Image",
         "type": "image",
         "tableRef": "image",
+        "option": "single",
         "placeholder": "Enter Image",
         "id": "input1",
         "validation": ["required", "trim", "unique"],

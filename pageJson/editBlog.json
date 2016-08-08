@@ -23,6 +23,16 @@
         "url": "",
         "model": "name"
     },{
+        "name": "Tags",
+        "type": "selectFromTable",
+        "option": "multiple",
+        "tableRef": "tags",
+        "model": "tags",
+        "placeholder": "Enter Tag Name",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": "tags/getAll"
+    },{
         "name": "Views",
         "type": "text",
         "tableRef": "views",
@@ -33,7 +43,7 @@
         "model": "views"
     },{
         "name": "Desciption",
-        "type": "text",
+        "type": "tinymceImage",
         "tableRef": "desciption",
         "placeholder": "Enter Desciption",
         "id": "input1",
@@ -43,6 +53,7 @@
     },{
         "name": "Image",
         "type": "image",
+        "option":"single",
         "tableRef": "image",
         "placeholder": "Enter name",
         "id": "input1",

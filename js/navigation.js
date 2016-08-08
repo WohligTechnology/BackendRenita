@@ -1,5 +1,5 @@
 // var adminurl = "http://blazen.io/";
-var adminurl = "http://192.168.0.114:1337/";
+var adminurl = "http://localhost:1337/";
 // var adminurl = "http://104.199.151.75:82/";
 // var adminurl = "http://192.168.1.103:82/";
 var imgurl = "http://146.148.4.222/upload/";
@@ -15,6 +15,16 @@ var navigationservice = angular.module('navigationservice', [])
         link: "#/page/viewSlider",
         subnav: []
     }, {
+        name: "Category",
+        classis: "active",
+        link: "#/page/viewCategory",
+        subnav: []
+    }, {
+        name: "Sub-Category",
+        classis: "active",
+        link: "#/page/viewSubCategory",
+        subnav: []
+    }, {
         name: "Doctor",
         classis: "active",
         link: "#/page/viewDoctor",
@@ -24,25 +34,10 @@ var navigationservice = angular.module('navigationservice', [])
         classis: "active",
         link: "#/page/viewBlog",
         subnav: []
-    },{
-        name: "PopularPost",
-        classis: "active",
-        link: "#/page/viewPopularPost",
-        subnav: []
     }, {
         name: "Tags",
         classis: "active",
         link: "#/page/viewTags",
-        subnav: []
-    }, {
-        name: "Category",
-        classis: "active",
-        link: "#/page/viewCategory",
-        subnav: []
-    }, {
-        name: "Sub-Category",
-        classis: "active",
-        link: "#/page/viewSubCategory",
         subnav: []
     }];
 

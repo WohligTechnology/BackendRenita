@@ -12,11 +12,6 @@
         "isSort": "",
         "type": "text",
         "tableRef": "subCatName"
-    }, {
-        "name": "Image",
-        "type": "image",
-        "isSort": "",
-        "tableRef": "image"
     }],
     "action": [{
         "name": "edit",

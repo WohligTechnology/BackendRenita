@@ -11,22 +11,6 @@
         "id": "input1",
         "validation": ["required", "trim", "unique"],
         "url": "category/getAll"
-    },  {
-        "name": "Description title",
-        "type": "text",
-        "tableRef": "descriptionTitle",
-        "placeholder": "Enter Description-Title",
-        "id": "input1",
-        "validation": ["required", "trim", "unique"],
-        "url": ""
-    },{
-        "name": "Description",
-        "type": "tinymceImage",
-        "tableRef": "description",
-        "placeholder": "Enter Description",
-        "id": "input1",
-        "validation": ["required", "trim", "unique"],
-        "url": ""
     },{
         "name": "Sub-Category-Name",
         "type": "text",
@@ -36,18 +20,10 @@
         "validation": ["required", "trim", "unique"],
         "url": ""
     },{
-        "name": "Sub-Category-Description",
-        "type": "textarea",
-        "tableRef": "subCatDescription",
-        "placeholder": "Enter Sub-Category-Description",
-        "id": "input1",
-        "validation": ["required", "trim", "unique"],
-        "url": ""
-    },{
-        "name": "Image",
-        "type": "image",
-        "tableRef": "image",
-        "placeholder": "Enter Image",
+        "name": "Description",
+        "type": "tinymceImage",
+        "tableRef": "description",
+        "placeholder": "Enter Description",
         "id": "input1",
         "validation": ["required", "trim", "unique"],
         "url": ""

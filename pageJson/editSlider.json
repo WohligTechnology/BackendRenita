@@ -14,15 +14,26 @@
         "url": "",
         "model": "_id"
     }, {
-        "name": "Image",
+        "name": "Image1",
         "type": "image",
-        "tableRef": "image",
+        "tableRef": "image1",
+        "option": "single",
         "placeholder": "Enter name",
         "id": "input1",
         "validation": ["required", "trim", "unique"],
         "url": "",
-        "model": "image"
-    },{
+        "model": "image1"
+    }, {
+        "name": "Image2",
+        "option": "single",
+        "type": "image",
+        "tableRef": "image2",
+        "placeholder": "Enter Image",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "image2"
+    }, {
         "name": "URL",
         "type": "text",
         "tableRef": "url",

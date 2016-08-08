@@ -11,25 +11,25 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     $scope.user = '';
     $scope.submitLogin = function(user) {
-        $state.go("page", {
-            jsonName: "viewBlog"
-        });
-        // NavigationService.submitLogin(user, function(data) {
-        //     console.log(data);
-        //     $state.go("page", {
-        //             jsonName: "viewBlog"
-        //     });
-        //     // if (data.value === true) {
-        //     //     $state.go("page", {
-        //     //         jsonName: "viewMovie"
-        //     //     });
-        //     //     $.jStorage.set("user", data);
-        //     // } else if (data.value === false) {
-        //     //     $scope.successmsg = "Email or Password is wrong";
-        //     // }
-        // }, function() {
-        //     console.log("Fail");
+        // $state.go("page", {
+        //     jsonName: "viewBlog"
         // });
+        NavigationService.submitLogin(user, function(data) {
+            // console.log(data);
+            // $state.go("page", {
+            //         jsonName: "viewBlog"
+            // });
+            if (data.value === true) {
+                $state.go("page", {
+                    jsonName: "viewBlog"
+                });
+                $.jStorage.set("user", data);
+            } else if (data.value === false) {
+                $scope.successmsg = "Email or Password is wrong";
+            }
+        }, function() {
+            console.log("Fail");
+        });
     };
 })
 

@@ -4,9 +4,20 @@
     "desciption": "",
     "pageType": "create",
     "fields": [{
-        "name": "Image",
+        "name": "Image1",
         "type": "image",
-        "tableRef": "image",
+        "option": "single",
+        "tableRef": "image1",
+        "placeholder": "Enter Image",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },
+    {
+        "name": "Image2",
+        "type": "image",
+        "option": "single",
+        "tableRef": "image2",
         "placeholder": "Enter Image",
         "id": "input1",
         "validation": ["required", "trim", "unique"],

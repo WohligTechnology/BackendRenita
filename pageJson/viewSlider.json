@@ -3,11 +3,16 @@
     "desciption": "",
     "pageType": "view",
     "fields": [{
-            "name": "Image",
+            "name": "Image1",
             "type":"image",
             "isSort": "",
-            "tableRef": "image"
+            "tableRef": "image1"
         },{
+                "name": "Image2",
+                "type":"image",
+                "isSort": "",
+                "tableRef": "image2"
+            },{
                 "name": "URL",
                 "type":"text",
                 "isSort": "",

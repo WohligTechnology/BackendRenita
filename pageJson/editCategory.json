@@ -22,6 +22,26 @@
         "validation": ["required", "trim", "unique"],
         "url": "",
         "model": "name"
+    }, {
+        "name": "Description",
+        "type": "tinymce",
+        "tableRef": "description",
+        "tableRef": "description",
+        "placeholder": "Enter Description",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },{
+        "name": "Image",
+        "type": "image",
+        "tableRef": "image",
+        "model": "image",
+        "option": "single",
+        "size":"1920 X 963",
+        "placeholder": "Enter Image",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
     },{
         "name": "Status",
         "type": "select",
