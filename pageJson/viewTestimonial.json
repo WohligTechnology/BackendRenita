@@ -9,7 +9,7 @@
     },{
         "name": "Tag Name",
         "isSort": "",
-        "tableRef": "tags"
+        "tableRef": "tags.name"
     }],
     "action": [{
         "name": "edit",
