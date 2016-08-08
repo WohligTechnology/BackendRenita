@@ -11,9 +11,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     $scope.user = '';
     $scope.submitLogin = function(user) {
-      $state.go("page", {
-                  jsonName: "viewBlog"
-          });
+        $state.go("page", {
+            jsonName: "viewBlog"
+        });
         // NavigationService.submitLogin(user, function(data) {
         //     console.log(data);
         //     $state.go("page", {
@@ -50,19 +50,29 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         window.history.back();
     };
     $scope.totalItems = 64;
- $scope.currentPage = 4;
+    $scope.currentPage = 4;
 
- $scope.setPage = function (pageNo) {
-   $scope.currentPage = pageNo;
- };
+    $scope.setPage = function(pageNo) {
+        $scope.currentPage = pageNo;
+    };
 
- $scope.pageChanged = function() {
-   $log.log('Page changed to: ' + $scope.currentPage);
- };
+    $scope.pageChanged = function() {
+        $log.log('Page changed to: ' + $scope.currentPage);
+    };
 
- $scope.maxSize = 5;
- $scope.bigTotalItems = 175;
- $scope.bigCurrentPage = 1;
+    $scope.tinymceOptions = {
+        onChange: function(e) {
+            // put logic here for keypress and cut/paste changes
+        },
+        inline: false,
+        plugins: 'advlist autolink link image lists charmap print preview',
+        skin: 'lightgray',
+        theme: 'modern',
+        automatic_uploads: false
+    };
+    $scope.maxSize = 5;
+    $scope.bigTotalItems = 175;
+    $scope.bigCurrentPage = 1;
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("users");
     $scope.menutitle = NavigationService.makeactive("Users");
@@ -92,8 +102,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     var urlid1 = $location.absUrl().split('%C2%A2')[1];
     var urlid2 = $location.absUrl().split('%C2%A2')[2];
 
-    $scope.removeImage = function(page, image,field) {
-      field.model = "";
+    $scope.removeImage = function(page, image, field) {
+        field.model = "";
         $scope.json.editData[image] = "";
     };
 
@@ -221,8 +231,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
             var pageno = 1;
             console.log($stateParams.no);
-            if($stateParams.no)
-            {
+            if ($stateParams.no) {
                 pageno = parseInt($stateParams.no);
             }
             $scope.pagination = {
@@ -269,33 +278,36 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             }
             // call api for view data
             $scope.apiName = $scope.json.apiCall.url;
-            $scope.pageInfo = {totalitems:100};
+            $scope.pageInfo = {
+                totalitems: 100
+            };
             $scope.getMoreResults = function(value) {
-                if(value)
-                {
-                  console.log($scope.pagination);
-                  $state.go("pageno",{no:$scope.pagination.pagenumber,jsonName:$stateParams.jsonName});
-                }
-                else {
-                  console.log($scope.pagination);
-                  NavigationService.findProjects($scope.apiName, $scope.pagination, function(findData) {
-                      console.log(findData);
-                      if (findData.value !== false) {
-                          if (findData.data && findData.data.data && findData.data.data.length > 0) {
-                              $scope.pageInfo.lastpage = findData.data.totalpages;
-                              $scope.pageInfo.pagenumber = findData.data.pagenumber;
-                              $scope.pageInfo.totalitems = $scope.pagination.pagesize * findData.data.totalpages;
-                              $scope.json.tableData = findData.data.data;
-                          } else {
-                              $scope.json.tableData = [];
-                          }
-                      } else {
-                          $scope.json.tableData = [];
-                      }
-                      console.log($scope.pagination);
-                  }, function() {
-                      console.log("Fail");
-                  });
+                if (value) {
+                    console.log($scope.pagination);
+                    $state.go("pageno", {
+                        no: $scope.pagination.pagenumber,
+                        jsonName: $stateParams.jsonName
+                    });
+                } else {
+                    console.log($scope.pagination);
+                    NavigationService.findProjects($scope.apiName, $scope.pagination, function(findData) {
+                        console.log(findData);
+                        if (findData.value !== false) {
+                            if (findData.data && findData.data.data && findData.data.data.length > 0) {
+                                $scope.pageInfo.lastpage = findData.data.totalpages;
+                                $scope.pageInfo.pagenumber = findData.data.pagenumber;
+                                $scope.pageInfo.totalitems = $scope.pagination.pagesize * findData.data.totalpages;
+                                $scope.json.tableData = findData.data.data;
+                            } else {
+                                $scope.json.tableData = [];
+                            }
+                        } else {
+                            $scope.json.tableData = [];
+                        }
+                        console.log($scope.pagination);
+                    }, function() {
+                        console.log("Fail");
+                    });
                 }
 
             };

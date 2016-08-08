@@ -54,6 +54,10 @@
                 <label>{{field.name}}</label>
                 <textarea ui-tinymce ng-model="field.model"></textarea>
             </div>
+            <div ng-if="field.type=='tinymceImage'">
+                <label>{{field.name}}</label>
+                <textarea ui-tinymce="tinymceOptions" ng-model="field.model"></textarea>
+            </div>
             <div ng-if="field.type=='date'">
                 <label>Date</label>
                 <!-- <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker> -->

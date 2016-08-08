@@ -20,8 +20,8 @@
         "validation": ["required", "trim", "unique"],
         "url": ""
     },{
-        "name": "Desciption",
-        "type": "textarea",
+        "name": "Description",
+        "type": "tinymceImage",
         "tableRef": "description",
         "placeholder": "Enter Description",
         "id": "input1",
