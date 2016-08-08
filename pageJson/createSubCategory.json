@@ -5,12 +5,12 @@
     "pageType": "create",
     "fields": [{
         "name": "Category-Name",
-        "type": "text",
-        "tableRef": "category.name",
+        "type": "selectFromTable",
+        "tableRef": "category",
         "placeholder": "Enter Category-Name",
         "id": "input1",
         "validation": ["required", "trim", "unique"],
-        "url": ""
+        "url": "category/getAll"
     },  {
         "name": "Description title",
         "type": "text",

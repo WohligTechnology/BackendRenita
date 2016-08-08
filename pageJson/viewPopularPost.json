@@ -11,13 +11,18 @@
         "type": "image",
         "isSort": "",
         "tableRef": "image"
+    }, {
+        "name": "Date",
+        "type": "date",
+        "isSort": "",
+        "tableRef": "date"
     }],
     "action": [{
         "name": "edit",
         "icon": "mode_edit",
         "color": "blue",
         "action": "redirect",
-        "jsonPage": "editDoctor",
+        "jsonPage": "editPopularPost",
         "fieldsToSend": ["_id"],
         "callFindOne": "PopularPost/getone"
     }, {

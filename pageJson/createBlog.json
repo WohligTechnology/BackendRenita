@@ -11,6 +11,22 @@
         "id": "input1",
         "validation": ["required", "trim", "unique"],
         "url": ""
+    },{
+        "name": "Tags",
+        "type": "selectFromTable",
+        "tableRef": "tags",
+        "placeholder": "Enter Tag Name",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": "tags/getAll"
+    },  {
+        "name": "Date",
+        "type": "date",
+        "tableRef": "date",
+        "placeholder": "Enter Image",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
     }, {
         "name": "Views",
         "type": "text",
@@ -27,7 +43,7 @@
         "id": "input1",
         "validation": ["required", "trim", "unique"],
         "url": ""
-    },{
+    }, {
         "name": "Image",
         "type": "image",
         "tableRef": "image",
@@ -35,7 +51,7 @@
         "id": "input1",
         "validation": ["required", "trim", "unique"],
         "url": ""
-    },{
+    }, {
         "name": "Status",
         "type": "select",
         "tableRef": "status",

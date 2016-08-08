@@ -4,8 +4,14 @@
     "pageType": "view",
     "fields": [{
         "name": "Name",
+        "type":"text",
         "isSort": "",
         "tableRef": "name"
+    }, {
+        "name": "Image",
+        "type": "image",
+        "isSort": "",
+        "tableRef": "image"
     }],
     "action": [{
         "name": "edit",

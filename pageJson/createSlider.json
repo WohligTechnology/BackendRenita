@@ -1,6 +1,6 @@
 {
-    "title": "Create User",
-    "jsonPage": "userView",
+    "title": "Create Slider",
+    "jsonPage": "viewSlider",
     "desciption": "",
     "pageType": "create",
     "fields": [{
@@ -8,6 +8,14 @@
         "type": "image",
         "tableRef": "image",
         "placeholder": "Enter Image",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },{
+        "name": "URL",
+        "type": "text",
+        "tableRef": "url",
+        "placeholder": "Enter URL",
         "id": "input1",
         "validation": ["required", "trim", "unique"],
         "url": ""

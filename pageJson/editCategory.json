@@ -38,6 +38,13 @@
             "name": "Disable"
         }]
     }],
+    "action": [{
+        "name": "submit",
+        "action": "submitTags"
+    }, {
+        "name": "cancel",
+        "stateName": "page({jsonName:'viewCategory'})"
+    }],
     "apiCall": {
         "url": "Category/savedata",
         "params": "_id"
@@ -45,11 +52,5 @@
     "preApi": {
         "url": "Category/getOne",
         "params": "_id"
-    },
-    "sidemenu": [{
-        "url": "",
-        "anchor": "",
-        "state": "",
-        "action": ""
-    }]
+    }
 }

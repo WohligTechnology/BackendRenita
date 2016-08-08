@@ -25,7 +25,7 @@
         "action": "redirect",
         "jsonPage": "editBlog",
         "fieldsToSend": ["_id"],
-        "callFindOne": "Blog/getone"
+        "callFindOne": "blog/getone"
     }, {
         "name": "delete",
         "icon": "delete",
@@ -33,7 +33,7 @@
         "action": "apiCallConfirm",
         "title": "Delete Blog",
         "content": "Are you sure you want to delete Blog?",
-        "api": "Blog/delete",
+        "api": "blog/delete",
         "fieldsToSend": [{
             "name": "_id",
             "value": "_id"

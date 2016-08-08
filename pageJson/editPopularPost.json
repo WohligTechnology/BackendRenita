@@ -32,6 +32,15 @@
         "url": "",
         "model": "image"
     },{
+        "name": "Date",
+        "type": "date",
+        "tableRef": "date",
+        "placeholder": "Enter Date",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "date"
+    },{
         "name": "Status",
         "type": "select",
         "tableRef": "status",
@@ -47,6 +56,13 @@
             "name": "Disable"
         }]
     }],
+        "action": [{
+            "name": "submit",
+            "action": "submitDoctor"
+        }, {
+            "name": "cancel",
+            "stateName": "page({jsonName:'viewPopularPost'})"
+        }],
     "apiCall": {
         "url": "PopularPost/savedata",
         "params": "_id"
@@ -54,11 +70,5 @@
     "preApi": {
         "url": "PopularPost/getOne",
         "params": "_id"
-    },
-    "sidemenu": [{
-        "url": "",
-        "anchor": "",
-        "state": "",
-        "action": ""
-    }]
+    }
 }

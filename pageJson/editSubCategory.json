@@ -15,13 +15,13 @@
         "model": "_id"
     },{
         "name": "Category-Name",
-        "type": "text",
-        "tableRef": "category.name",
+        "type": "selectFromTable",
+        "tableRef": "category",
         "placeholder": "Enter Category-Name",
         "id": "input1",
         "validation": ["required", "trim", "unique"],
-        "url": "",
-        "model": "category.name"
+        "url": "category/getAll",
+        "model": "category"
     },{
         "name": "Description title",
         "type": "text",
@@ -78,23 +78,24 @@
         "url": [{
             "value": true,
             "name": "Enable"
-        }, {
+        },{
             "value": false,
             "name": "Disable"
         }]
     }],
+    "action": [{
+        "name": "submit",
+        "action": "submitSubCategory"
+    }, {
+        "name": "cancel",
+        "stateName": "page({jsonName:'viewSubCategory'})"
+    }],
     "apiCall": {
-        "url": "SubCategory/savedatadata",
+        "url": "SubCategory/savedata",
         "params": "_id"
     },
     "preApi": {
         "url": "SubCategory/getOne",
         "params": "_id"
-    },
-    "sidemenu": [{
-        "url": "",
-        "anchor": "",
-        "state": "",
-        "action": ""
-    }]
+    }
 }

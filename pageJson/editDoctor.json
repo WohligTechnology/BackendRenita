@@ -65,6 +65,14 @@
             "name": "Disable"
         }]
     }],
+
+    "action": [{
+        "name": "submit",
+        "action": "submitDoctor"
+    }, {
+        "name": "cancel",
+        "stateName": "page({jsonName:'viewDoctor'})"
+    }],
     "apiCall": {
         "url": "doctor/savedata",
         "params": "_id"
@@ -72,11 +80,5 @@
     "preApi": {
         "url": "doctor/getOne",
         "params": "_id"
-    },
-    "sidemenu": [{
-        "url": "",
-        "anchor": "",
-        "state": "",
-        "action": ""
-    }]
+    }
 }

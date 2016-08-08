@@ -7,7 +7,12 @@
             "type":"image",
             "isSort": "",
             "tableRef": "image"
-        }],
+        },{
+                "name": "URL",
+                "type":"text",
+                "isSort": "",
+                "tableRef": "url"
+            }],
     "action": [{
         "name": "edit",
         "icon": "mode_edit",

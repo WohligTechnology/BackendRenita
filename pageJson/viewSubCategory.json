@@ -1,14 +1,16 @@
 {
-    "title": "All Doctors",
+    "title": "Sub Category-Name",
     "desciption": "",
     "pageType": "view",
     "fields": [{
         "name": "Category-Name",
         "isSort": "",
+        "type": "text",
         "tableRef": "category.name"
     }, {
         "name": "Sub-Category-Name",
         "isSort": "",
+        "type": "text",
         "tableRef": "subCatName"
     }, {
         "name": "Image",
