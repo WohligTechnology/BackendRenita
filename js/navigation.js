@@ -1,11 +1,10 @@
-// var adminurl = "http://blazen.io/";
-var adminurl = "http://localhost:1337/";
-// var adminurl = "http://104.199.151.75:82/";
-// var adminurl = "http://192.168.1.103:82/";
-var imgurl = "http://146.148.4.222/upload/";
+// var adminurl = "http://localhost:1337/";
+var adminurl = "http://104.154.89.21/";
+var imgurl = "http://104.154.89.21/upload/";
+// var imgurl = "http://localhost:1337/upload/";
 var imgpath = adminurl + "upload/readFile";
 var uploadurl = adminurl + "upload/";
-// var imgpath = imgurl + "readFile";
+var imgpath = imgurl + "readFile";
 var navigationservice = angular.module('navigationservice', [])
 
 .factory('NavigationService', function($http) {
@@ -44,7 +43,13 @@ var navigationservice = angular.module('navigationservice', [])
         classis: "active",
         link: "#/page/viewTestimonial",
         subnav: []
-    }];
+    },
+    {
+       name: "Media",
+       classis: "active",
+       link: "#/page/viewMedia",
+       subnav: []
+   }];
 
     return {
         getnav: function() {

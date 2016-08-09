@@ -26,8 +26,8 @@
             <p ng-repeat="field in json.fields">
                 <span ng-if="field.type!='image' && result|getValue:field.tableRef:field.type!=''">{{result|getValue:field.tableRef:field.type}}</span>
                 <span ng-if="field.type!='image' && result|getValue:field.tableRef:field.type ==''"></span>
-                <span class="img-holder">
-                    <img ng-src="{{result|getValue:field.tableRef:field.type}}" alt="" ng-if="field.type=='image'">
+                <span class="img-holder" ng-if="field.type=='image'">
+                    <img ng-src="{{result|getValue:field.tableRef:field.type}}" alt="" >
                 </span>
             </p>
             <md-button aria-label="Expand" class="md-icon-button" ng-repeat="action in json.action" ng-click="performAction(action,result)">

@@ -190,6 +190,10 @@ li.pagination-page.ng-scope.active a {
     background: #0275d8;
     color: white;
 }
+
+md-list-item, md-list-item .md-list-item-inner {
+  font-size: 17px;
+}
 /*
 Copyright 2016 Google Inc. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that can be in foundin the LICENSE file at http://material.angularjs.org/license.
