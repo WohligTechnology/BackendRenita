@@ -54,6 +54,7 @@
         "name": "Image",
         "type": "image",
         "option":"single",
+        "size": "351 X 239",
         "tableRef": "image",
         "placeholder": "Enter name",
         "id": "input1",
