@@ -19,7 +19,6 @@
         "tableRef": "image",
         "model": "image",
         "option": "single",
-        "size":"1920 X 963",
         "placeholder": "Enter Image",
         "id": "input1",
         "validation": ["required", "trim", "unique"],
