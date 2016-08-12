@@ -85,7 +85,7 @@ firstapp.filter('getValue', function($filter) {
             _.each(keyArr, function(n) {
                 returnValue = returnValue[n];
             });
-    
+
             if (type == "date") {
                 console.log('in date');
                 // return new Date(returnValue);

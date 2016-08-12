@@ -47,6 +47,16 @@
         "validation": ["required", "trim", "unique"],
         "url": ""
     }, {
+        "name": "Banner Image",
+        "type": "image",
+        "option":"single",
+        "size": "1920 X 963",
+        "tableRef": "bannerimage",
+        "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },{
         "name": "Status",
         "type": "select",
         "tableRef": "status",

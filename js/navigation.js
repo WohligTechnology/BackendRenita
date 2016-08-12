@@ -1,7 +1,7 @@
-// var adminurl = "http://localhost:1337/";
+// var adminurl = "http://192.168.1.113:1337/";
 var adminurl = "http://104.154.89.21/";
 var imgurl = "http://104.154.89.21/upload/";
-// var imgurl = "http://localhost:1337/upload/";
+// var imgurl = "http://192.168.1.113:1337/upload/";
 var imgpath = adminurl + "upload/readFile";
 var uploadurl = adminurl + "upload/";
 var imgpath = imgurl + "readFile";
