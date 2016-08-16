@@ -2,22 +2,23 @@
     "title": "All Slider",
     "desciption": "",
     "pageType": "view",
+    "sortable": "size/sort",
     "fields": [{
-            "name": "Background Image",
-            "type":"image",
-            "isSort": "",
-            "tableRef": "image1"
-        },{
-                "name": "Front Image",
-                "type":"image",
-                "isSort": "",
-                "tableRef": "image2"
-            },{
-                "name": "URL",
-                "type":"text",
-                "isSort": "",
-                "tableRef": "url"
-            }],
+        "name": "Background Image",
+        "type": "image",
+        "isSort": "",
+        "tableRef": "image1"
+    }, {
+        "name": "Front Image",
+        "type": "image",
+        "isSort": "",
+        "tableRef": "image2"
+    }, {
+        "name": "URL",
+        "type": "text",
+        "isSort": "",
+        "tableRef": "url"
+    }],
     "action": [{
         "name": "edit",
         "icon": "mode_edit",
