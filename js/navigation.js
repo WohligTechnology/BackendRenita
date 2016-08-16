@@ -10,6 +10,11 @@ var navigationservice = angular.module('navigationservice', [])
         classis: "active",
         link: "#/page/viewSlider",
         subnav: []
+    },{
+        name: "Header Banner",
+        classis: "active",
+        link: "#/page/viewHeader",
+        subnav: []
     }, {
         name: "Category",
         classis: "active",
