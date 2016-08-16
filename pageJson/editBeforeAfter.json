@@ -1,6 +1,6 @@
 {
-    "title": "Edit Slider",
-    "jsonPage": "viewSlider",
+    "title": "Edit Sub-Category",
+    "jsonPage": "viewBeforeAfter",
     "desciption": "",
     "pageType": "edit",
     "urlFields": ["_id"],
@@ -14,36 +14,23 @@
         "url": "",
         "model": "_id"
     }, {
-        "name": "Background Image",
-        "type": "image",
-        "tableRef": "image1",
-        "option": "single",
-        "size":"1920 X 963",
-        "placeholder": "Enter name",
-        "id": "input1",
-        "validation": ["required", "trim", "unique"],
-        "url": "",
-        "model": "image1"
-    }, {
-        "name": "Front Image",
-        "option": "single",
-        "size":"1920 X 963",
-        "type": "image",
-        "tableRef": "image2",
-        "placeholder": "Enter Image",
-        "id": "input1",
-        "validation": ["required", "trim", "unique"],
-        "url": "",
-        "model": "image2"
-    }, {
-        "name": "URL",
+        "name": "Name",
         "type": "text",
-        "tableRef": "url",
-        "placeholder": "Enter URL",
+        "tableRef": "name",
+        "model": "name",
+        "placeholder": "Enter Name",
         "id": "input1",
         "validation": ["required", "trim", "unique"],
-        "url": "",
-        "model": "url"
+        "url": ""
+    }, {
+        "name": "Description",
+        "type": "tinymceImage",
+        "tableRef": "description",
+        "model": "description",
+        "placeholder": "Enter Description",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
     }, {
         "name": "Status",
         "type": "select",
@@ -60,27 +47,19 @@
             "name": "Disable"
         }]
     }],
-
     "action": [{
         "name": "submit",
-        "action": "submitSlider"
+        "action": "submitBeforeAfter"
     }, {
         "name": "cancel",
-        "stateName": "page({jsonName:'viewSlider'})"
+        "stateName": "page({jsonName:'viewBeforeAfter'})"
     }],
-
     "apiCall": {
-        "url": "homeslider/savedata",
+        "url": "BeforeAfter/savedata",
         "params": "_id"
     },
     "preApi": {
-        "url": "homeslider/getOne",
+        "url": "BeforeAfter/getOne",
         "params": "_id"
-    },
-    "sidemenu": [{
-        "url": "",
-        "anchor": "",
-        "state": "",
-        "action": ""
-    }]
+    }
 }

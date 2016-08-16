@@ -1,10 +1,7 @@
-// var adminurl = "http://192.168.1.113:1337/";
 var adminurl = "http://104.154.89.21/";
-var imgurl = "http://104.154.89.21/upload/";
-// var imgurl = "http://192.168.1.113:1337/upload/";
-var imgpath = adminurl + "upload/readFile";
+var adminurl = "http://localhost:1337/";
 var uploadurl = adminurl + "upload/";
-var imgpath = imgurl + "readFile";
+var imgpath = uploadurl + "readFile/";
 var navigationservice = angular.module('navigationservice', [])
 
 .factory('NavigationService', function($http) {
@@ -43,13 +40,17 @@ var navigationservice = angular.module('navigationservice', [])
         classis: "active",
         link: "#/page/viewTestimonial",
         subnav: []
-    },
-    {
-       name: "Media",
-       classis: "active",
-       link: "#/page/viewMedia",
-       subnav: []
-   }];
+    }, {
+        name: "Media",
+        classis: "active",
+        link: "#/page/viewMedia",
+        subnav: []
+    }, {
+        name: "Before After",
+        classis: "active",
+        link: "#/page/viewBeforeAfter",
+        subnav: []
+    }];
 
     return {
         getnav: function() {

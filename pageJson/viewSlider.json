@@ -3,12 +3,12 @@
     "desciption": "",
     "pageType": "view",
     "fields": [{
-            "name": "Image1",
+            "name": "Background Image",
             "type":"image",
             "isSort": "",
             "tableRef": "image1"
         },{
-                "name": "Image2",
+                "name": "Front Image",
                 "type":"image",
                 "isSort": "",
                 "tableRef": "image2"

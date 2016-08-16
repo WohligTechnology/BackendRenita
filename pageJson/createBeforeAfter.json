@@ -1,26 +1,21 @@
 {
-    "title": "Create Slider",
-    "jsonPage": "viewSlider",
+    "title": "Create BeforeAfter",
+    "jsonPage": "viewBeforeAfter",
     "desciption": "",
     "pageType": "create",
     "fields": [{
-        "name": "Background Image",
-        "type": "image",
-        "option": "single",
-        "size":"1920 X 963",
-        "tableRef": "image1",
-        "placeholder": "Enter Image",
+        "name": "Name",
+        "type": "text",
+        "tableRef": "name",
+        "placeholder": "Enter Name",
         "id": "input1",
         "validation": ["required", "trim", "unique"],
         "url": ""
-    },
-    {
-        "name": "Front Image",
-        "type": "image",
-        "option": "single",
-        "size":"1920 X 963",
-        "tableRef": "image2",
-        "placeholder": "Enter Image",
+    },{
+        "name": "Description",
+        "type": "tinymceImage",
+        "tableRef": "description",
+        "placeholder": "Enter Description",
         "id": "input1",
         "validation": ["required", "trim", "unique"],
         "url": ""
@@ -41,13 +36,13 @@
     }],
     "action": [{
         "name": "submit",
-        "action": "submitUser"
+        "action": "submitBeforeAfter"
     }, {
         "name": "cancel",
-        "stateName": "page({jsonName:'viewSlider'})"
+        "stateName": "page({jsonName:'viewBeforeAfter'})"
     }],
 
     "apiCall": {
-        "url": "homeslider/savedata"
+        "url": "BeforeAfter/savedata"
     }
 }
