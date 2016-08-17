@@ -17,7 +17,7 @@
         "name": "URL",
         "type": "text",
         "isSort": "",
-        "tableRef": "url"
+        "tableRef": "url.name"
     }],
     "action": [{
         "name": "edit",

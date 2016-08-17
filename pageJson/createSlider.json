@@ -4,6 +4,15 @@
     "desciption": "",
     "pageType": "create",
     "fields": [{
+        "name": "Page Link",
+        "type": "selectFromTable",
+        "option": "single",
+        "tableRef": "url",
+        "placeholder": "Enter Page Link",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": "category/getAll"
+    },{
         "name": "Background Image",
         "type": "image",
         "option": "single",
