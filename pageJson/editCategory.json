@@ -22,26 +22,7 @@
         "validation": ["required", "trim", "unique"],
         "url": "",
         "model": "name"
-    },   {
-          "name": "colours",
-          "type": "text",
-          "tableRef": "colours",
-          "model": "colours",
-          "placeholder": "Enter Name",
-          "id": "input1",
-          "validation": ["required", "trim", "unique"],
-          "url": ""
-      },
-      {
-          "name": "anchor",
-          "type": "text",
-          "tableRef": "anchor",
-          "model": "anchor",
-          "placeholder": "Enter Name",
-          "id": "input1",
-          "validation": ["required", "trim", "unique"],
-          "url": ""
-      },{
+    }, {
         "name": "Description",
         "type": "tinymce",
         "tableRef": "description",
