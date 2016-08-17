@@ -2,9 +2,10 @@
     "title": "Category",
     "desciption": "",
     "pageType": "view",
+    "sortable": "category/sort",
     "fields": [{
         "name": "Name",
-        "type":"text",
+        "type": "text",
         "isSort": "",
         "tableRef": "name"
     }, {

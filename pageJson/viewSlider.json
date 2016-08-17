@@ -2,7 +2,7 @@
     "title": "All Slider",
     "desciption": "",
     "pageType": "view",
-    "sortable": "size/sort",
+    "sortable": "homeslider/sort",
     "fields": [{
         "name": "Background Image",
         "type": "image",

@@ -107,6 +107,20 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.json.editData[image] = "";
     };
 
+
+    $scope.sortableOptions = {
+            stop: function(e, ui) {
+                console.log($scope.json.tableData);
+                var ids = _.map($scope.json.tableData, "_id");
+                var names = _.map($scope.json.tableData, "name");
+                console.log(names);
+                $http.post(adminurl + $scope.json.sortable, ids).success(function(data) {
+                    showToast("Sorted Successfully");
+                }, function() {
+                    showToast("Error Sorting");
+                });
+            }
+        };
     $scope.confirm = function(title, content, api, data) {
         var confirm = $mdDialog.confirm()
             .title(title)

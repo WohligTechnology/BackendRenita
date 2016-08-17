@@ -2,6 +2,7 @@
     "title": "Tags",
     "desciption": "",
     "pageType": "view",
+    "sortable":"Tags/sort",
     "fields": [{
         "name": "Name",
         "isSort": "",

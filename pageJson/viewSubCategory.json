@@ -1,6 +1,7 @@
 {
     "title": "Sub Category-Name",
     "desciption": "",
+    "sortable":"SubCategory/sort",
     "pageType": "view",
     "fields": [{
         "name": "Category-Name",

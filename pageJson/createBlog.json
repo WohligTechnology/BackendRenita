@@ -31,7 +31,7 @@
     }, {
         "name": "Desciption",
         "type": "tinymceImage",
-        "tableRef": "desciption",
+        "tableRef": "description",
         "placeholder": "Enter Desciption",
         "id": "input1",
         "validation": ["required", "trim", "unique"],

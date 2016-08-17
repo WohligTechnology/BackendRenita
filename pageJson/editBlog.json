@@ -44,12 +44,12 @@
     },{
         "name": "Desciption",
         "type": "tinymceImage",
-        "tableRef": "desciption",
+        "tableRef": "description",
         "placeholder": "Enter Desciption",
         "id": "input1",
         "validation": ["required", "trim", "unique"],
         "url": "",
-        "model": "desciption"
+        "model": "description"
     },{
         "name": "Image",
         "type": "image",

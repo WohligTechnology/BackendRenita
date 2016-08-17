@@ -2,6 +2,7 @@
     "title": "Testimonial",
     "desciption": "",
     "pageType": "view",
+    "sortable":"Testimonial/sort",
     "fields": [{
         "name": "Name",
         "isSort": "",
