@@ -1,5 +1,5 @@
 var adminurl = "http://104.154.89.21:80/";
-// var adminurl = "http://192.168.0.111:1337/";
+var adminurl = "http://192.168.0.111:1337/";
 var uploadurl = adminurl + "upload/";
 var imgpath = uploadurl + "readFile/";
 var navigationservice = angular.module('navigationservice', [])
@@ -55,7 +55,13 @@ var navigationservice = angular.module('navigationservice', [])
         classis: "active",
         link: "#/page/viewBeforeAfter",
         subnav: []
-    }];
+    },
+    {
+       name: "Subscribe",
+       classis: "active",
+       link: "#/page/viewSubscribe",
+       subnav: []
+   }];
 
     return {
         getnav: function() {
