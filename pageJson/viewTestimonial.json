@@ -11,6 +11,11 @@
         "name": "Tag Name",
         "isSort": "",
         "tableRef": "tags.name"
+    },{
+        "name": "Image",
+        "type": "image",
+        "isSort": "",
+        "tableRef": "image"
     }],
     "action": [{
         "name": "edit",

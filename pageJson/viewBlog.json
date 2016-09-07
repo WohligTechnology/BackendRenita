@@ -11,7 +11,7 @@
         "name": "View",
         "type": "text",
         "isSort": "",
-        "tableRef": "view"
+        "tableRef": "views"
     }, {
         "name": "Image",
         "type": "image",
