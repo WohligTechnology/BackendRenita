@@ -194,6 +194,21 @@ li.pagination-page.ng-scope.active a {
 md-list-item, md-list-item .md-list-item-inner {
   font-size: 17px;
 }
+
+ .min-w{
+  .md-no-style {
+    position: relative;
+    padding: 0px 0px;
+    flex: 1 1 auto;
+    position: absolute;
+    min-height: 48px !important;
+}
+.md-list-item-inner{
+  &:before{
+        padding: 0px 12px;
+  }
+}
+}
 /*
 Copyright 2016 Google Inc. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that can be in foundin the LICENSE file at http://material.angularjs.org/license.
