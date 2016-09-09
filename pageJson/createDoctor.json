@@ -27,14 +27,6 @@
         "id": "input1",
         "validation": ["required", "trim", "unique"],
         "url": ""
-    },{
-        "name": "Sub-Description",
-        "type": "tinymceImage",
-        "tableRef": "subdescription",
-        "placeholder": "Enter Sub-Description",
-        "id": "input1",
-        "validation": ["required", "trim", "unique"],
-        "url": ""
     }, {
         "name": "Image",
         "type": "image",
