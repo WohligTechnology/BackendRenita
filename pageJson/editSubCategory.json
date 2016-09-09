@@ -41,7 +41,16 @@
           "id": "input1",
           "validation": ["required", "trim", "unique"],
           "url": ""
-      }, {
+      },{
+            "name": "Color",
+            "type": "text",
+            "tableRef": "color",
+            "model": "color",
+            "placeholder": "Enter color",
+            "id": "input1",
+            "validation": ["required", "trim", "unique"],
+            "url": ""
+        }, {
         "name": "Description",
         "type": "tinymceImage",
         "tableRef": "subCatDescription",
