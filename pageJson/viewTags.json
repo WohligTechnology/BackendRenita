@@ -7,6 +7,10 @@
         "name": "Name",
         "isSort": "",
         "tableRef": "name"
+    },{
+        "name": "Status",
+        "isSort": "",
+        "tableRef": "status"
     }],
     "action": [{
         "name": "edit",

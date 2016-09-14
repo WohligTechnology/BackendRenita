@@ -8,15 +8,20 @@
         "isSort": "",
         "tableRef": "name"
     }, {
-        "name": "View",
-        "type": "text",
-        "isSort": "",
-        "tableRef": "views"
-    }, {
         "name": "Image",
         "type": "image",
         "isSort": "",
         "tableRef": "image"
+    },{
+        "name": "Video",
+        "type": "text",
+        "isSort": "",
+        "tableRef": "video"
+    },{
+        "name": "Status",
+        "type": "text",
+        "isSort": "",
+        "tableRef": "status"
     }],
     "action": [{
         "name": "edit",

@@ -33,20 +33,22 @@
             "name": "Testimonial"
         }]
     }, {
-        "name": "Description",
-        "type": "tinymce",
-        "tableRef": "description",
-        "placeholder": "Enter Description",
-        "id": "input1",
-        "validation": ["required", "trim", "unique"],
-        "url": ""
-    }, {
         "name": "Image",
         "type": "image",
         "tableRef": "image",
         "option": "single",
         "size": "1920 X 963",
         "placeholder": "Enter Image",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },{
+        "name": "Mobile Image",
+        "type": "image",
+        "tableRef": "image1",
+        "option": "single",
+        "size": "1080 X 920",
+        "placeholder": "Enter Mobile Image",
         "id": "input1",
         "validation": ["required", "trim", "unique"],
         "url": ""

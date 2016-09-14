@@ -4,15 +4,6 @@
     "desciption": "",
     "pageType": "create",
     "fields": [{
-        "name": "Tags Name",
-        "type": "selectFromTable",
-        "option":"single",
-        "tableRef": "tags",
-        "placeholder": "Enter Tags-Name",
-        "id": "input1",
-        "validation": ["required", "trim", "unique"],
-        "url": "tags/getAll"
-    },{
         "name": "Name",
         "type": "text",
         "tableRef": "name",

@@ -25,6 +25,13 @@ nav li:hover .dropdown-menu {
 ng-md-icon {
   transition: all 1s;
 }
+.word-b{
+  display: inline-block;
+    width: 38px;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+}
 .md-button .md-ripple-container {
   z-index: 60;
 }

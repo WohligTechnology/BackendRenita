@@ -14,16 +14,6 @@
         "url": "",
         "model": "_id"
     },{
-        "name": "Tags Name",
-        "type": "selectFromTable",
-        "option":"single",
-        "tableRef": "tags",
-        "model": "tags",
-        "placeholder": "Enter Tags-Name",
-        "id": "input1",
-        "validation": ["required", "trim", "unique"],
-        "url": "tags/getAll"
-    }, {
         "name": "name",
         "type": "text",
         "tableRef": "name",
@@ -38,7 +28,7 @@
         "option": "single",
         "size": "429 X 401",
         "tableRef": "image",
-        "placeholder": "Enter name",
+        "placeholder": "Image",
         "id": "input1",
         "validation": ["required", "trim", "unique"],
         "url": "",

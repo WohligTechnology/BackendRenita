@@ -18,6 +18,10 @@
         "type": "text",
         "isSort": "",
         "tableRef": "url.name"
+    },{
+        "name": "Status",
+        "isSort": "",
+        "tableRef": "status"
     }],
     "action": [{
         "name": "edit",

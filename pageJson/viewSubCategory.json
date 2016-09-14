@@ -1,5 +1,5 @@
 {
-    "title": "Sub Category-Name",
+    "title": "Sub Category",
     "desciption": "",
     "sortable":"SubCategory/sort",
     "pageType": "view",
@@ -8,11 +8,15 @@
         "isSort": "",
         "type": "text",
         "tableRef": "category.name"
-    }, {
+    },{
         "name": "Sub-Category-Name",
         "isSort": "",
         "type": "text",
         "tableRef": "subCatName"
+    },{
+        "name": "Status",
+        "isSort": "",
+        "tableRef": "status"
     }],
     "action": [{
         "name": "edit",

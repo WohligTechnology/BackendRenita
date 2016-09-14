@@ -8,14 +8,18 @@
         "isSort": "",
         "tableRef": "name"
     },{
-        "name": "Tag Name",
-        "isSort": "",
-        "tableRef": "tags.name"
-    },{
         "name": "Image",
         "type": "image",
         "isSort": "",
         "tableRef": "image"
+    },{
+      "name": "Video",
+      "isSort": "",
+      "tableRef": "video"
+    },{
+        "name": "Status",
+        "isSort": "",
+        "tableRef": "status"
     }],
     "action": [{
         "name": "edit",

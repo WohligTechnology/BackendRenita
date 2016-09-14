@@ -13,6 +13,16 @@
         "type": "image",
         "isSort": "",
         "tableRef": "image"
+    },{
+        "name": "Colour",
+        "type": "text",
+        "isSort": "",
+        "tableRef": "color"
+    },{
+        "name": "Status",
+        "type": "text",
+        "isSort": "",
+        "tableRef": "status"
     }],
     "action": [{
         "name": "edit",
