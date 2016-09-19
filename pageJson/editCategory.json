@@ -57,7 +57,7 @@
         "tableRef": "image1",
         "model": "image1",
         "option": "single",
-        "size":"1080 X 920",
+        "size":"705 X 1087",
         "placeholder": "Enter Mobile Image",
         "id": "input1",
         "validation": ["required", "trim", "unique"],
