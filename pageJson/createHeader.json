@@ -31,6 +31,9 @@
         }, {
             "value": "Testimonial",
             "name": "Testimonial"
+        }, {
+            "value": "Clinic",
+            "name": "Clinic Policy"
         }]
     }, {
         "name": "Image",
