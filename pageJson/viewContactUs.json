@@ -1,0 +1,34 @@
+{
+    "title": "Contact us",
+    "desciption": "",
+    "pageType": "view",
+    "fields": [
+        {
+        "name": "Name",
+        "isSort": "",
+        "tableRef": "name"
+    },
+        {
+        "name": "Email",
+        "isSort": "",
+        "tableRef": "email"
+    }],
+    "action": [ {
+        "name": "delete",
+        "icon": "delete",
+        "color": "red",
+        "action": "apiCallConfirm",
+        "title": "Delete Tag",
+        "content": "Are you sure you want to delete Tag?",
+        "api": "ContactUs/delete",
+        "fieldsToSend": [{
+            "name": "_id",
+            "value": "_id"
+        }]
+    }],
+    "apiCall": {
+        "url": "ContactUs/getLimited",
+        "params": ""
+    },
+    "createButtonState": "page({jsonName:'createContactUs'})"
+}

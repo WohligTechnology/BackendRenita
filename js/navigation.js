@@ -1,5 +1,5 @@
-var adminurl = "http://104.155.129.33:86/";
-// var adminurl = "http://localhost:1337/";
+// var adminurl = "http://104.155.129.33:86/";
+var adminurl = "http://localhost:1337/";
 // var adminurl = "http://192.168.0.111:1337/";
 //var adminurl = "http://192.168.1.116:1337/";
 var uploadurl = adminurl + "upload/";
@@ -62,6 +62,12 @@ var navigationservice = angular.module('navigationservice', [])
        name: "Subscribe",
        classis: "active",
        link: "#/page/viewSubscribe",
+       subnav: []
+   },
+    {
+       name: "Contact Us",
+       classis: "active",
+       link: "#/page/viewContactUs",
        subnav: []
    }];
 

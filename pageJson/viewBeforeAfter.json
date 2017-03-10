@@ -13,6 +13,11 @@
         "isSort": "",
         "type": "text",
         "tableRef": "status"
+    },{
+        "name": "Video",
+        "type": "text",
+        "isSort": "",
+        "tableRef": "video"
     }],
     "action": [{
         "name": "edit",
