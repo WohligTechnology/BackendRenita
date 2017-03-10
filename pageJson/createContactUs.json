@@ -44,7 +44,6 @@
         "tableRef": "alternateMobile",
         "placeholder": "Enter alternateMobile",
         "id": "input1",
-        "validation": ["required", "", ""],
         "url": ""
     },
     {
@@ -81,8 +80,8 @@
             "value": "appointment",
             "name": "Appointment"
         }, {
-            "value": "Feedback",
-            "name": "feedback"
+            "value": "feedback",
+            "name": "Feedback"
         },
         {
             "value": "complaint",
