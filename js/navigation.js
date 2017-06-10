@@ -1,4 +1,4 @@
-var adminurl = "http://35.187.236.240:86/";
+var adminurl = "http://renitarajan.com/";
 // var adminurl = "http://localhost:1337/";
 // var adminurl = "http://192.168.0.111:1337/";
 //var adminurl = "http://192.168.1.116:1337/";
