@@ -94,6 +94,42 @@
             "value": false,
             "name": "Disable"
         }]
+    },{
+        "name": "metaTagTitle",
+        "type": "text",
+        "tableRef": "metaTagTitle",
+        "placeholder": "Enter metaTagTitle",
+        "id": "input1",
+        "validation": ["required", "trim"],
+        "url": ""
+    },{
+        "name": "metaTag Description",
+        "type": "tinymceImage",
+        "tableRef": "metaTagDescription",
+        "placeholder": "Enter metaTagDescription",
+        "id": "input1",
+        "validation": ["required", "trim"],
+        "url": ""
+    },
+    {
+        "name": "metaTag Image",
+        "type": "image",
+        "size": "750 X 340",
+        "option": "single",
+        "tableRef": "metaTagImage",
+        "placeholder": "Enter metaTag Image",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },
+    {
+        "name": "metaTag Keywords",
+        "type": "text",
+        "tableRef": "metaTagKeywords",
+        "placeholder": "Enter metaTag Keywords",
+        "id": "input1",
+        "validation": ["required", "trim"],
+        "url": ""
     }],
     "action": [{
         "name": "submit",
