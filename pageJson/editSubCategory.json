@@ -67,22 +67,24 @@
             "value": false,
             "name": "Disable"
         }]
-    },{
+    }, {
         "name": "metaTagTitle",
         "type": "text",
         "tableRef": "metaTagTitle",
         "placeholder": "Enter metaTagTitle",
         "id": "input1",
         "validation": ["required", "trim"],
-        "url": ""
-    },{
+        "url": "",
+        "model": "metaTagTitle"
+    }, {
         "name": "metaTag Description",
         "type": "tinymceImage",
         "tableRef": "metaTagDescription",
         "placeholder": "Enter metaTagDescription",
         "id": "input1",
         "validation": ["required", "trim"],
-        "url": ""
+        "url": "",
+        "model": "metaTagDescription"
     },
     {
         "name": "metaTag Image",
@@ -93,7 +95,8 @@
         "placeholder": "Enter metaTag Image",
         "id": "input1",
         "validation": ["required", "trim", "unique"],
-        "url": ""
+        "url": "",
+        "model": "metaTagImage"
     },
     {
         "name": "metaTag Keywords",
@@ -102,8 +105,10 @@
         "placeholder": "Enter metaTag Keywords",
         "id": "input1",
         "validation": ["required", "trim"],
-        "url": ""
-    }],
+        "url": "",
+        "model": "metaTagKeywords"
+    }
+],
     "action": [{
         "name": "submit",
         "action": "submitSubCategory"
