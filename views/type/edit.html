@@ -41,12 +41,12 @@
                 <label>{{field.name}}</label>
                 <textarea style="height:100px;" ng-model="json.editData[field.model]" name="{{field.name}}" id="{{field.id}}"></textarea>
             </div>
-            <div ng-if="field.type=='tinymce'">
+            <div ng-if="field.type=='tinymce'"class="mar-t">
                 <label>{{field.name}}</label>
                 <textarea ui-tinymce ng-model="json.editData[field.model]"></textarea>
             </div>
 
-            <div ng-if="field.type=='tinymceImage'">
+            <div ng-if="field.type=='tinymceImage'"class="mar-t">
                 <label>{{field.name}}</label>
                 <textarea ui-tinymce="tinymceOptions" ng-model="json.editData[field.model]"></textarea>
             </div>

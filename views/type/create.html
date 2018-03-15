@@ -57,12 +57,15 @@
                 <label>{{field.name}}</label>
                 <textarea style="height:100px;" ng-model="field.model" name="{{field.name}}" id="{{field.id}}"></textarea>
             </div>
-            <div ng-if="field.type=='tinymce'">
+            <div ng-if="field.type=='tinymce'" class="mar-t">
                 <label>{{field.name}}</label>
                 <textarea ui-tinymce ng-model="field.model"></textarea>
             </div>
-            <div ng-if="field.type=='tinymceImage'">
+            <div>
                 <label>{{field.name}}</label>
+            </div>
+            <div ng-if="field.type=='tinymceImage'" class="mar-t">
+                
                 <textarea ui-tinymce="tinymceOptions" ng-model="field.model"></textarea>
             </div>
             <div ng-if="field.type=='date'">
