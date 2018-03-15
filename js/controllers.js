@@ -1,7 +1,7 @@
 var adminURL = "http://wohlig.io:81/";
 var mockURL = adminURL + "callApi/";
 
-angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ngSanitize', 'ngMaterial', 'ngMdIcons', 'ui.sortable', 'angular-clipboard', 'imageupload', 'ui.bootstrap', 'ui.tinymce'])
+angular.module('phonecatControllers', ['templateservicemod', 'navigationservice','ngSanitize', 'ngMaterial', 'ngMdIcons', 'ui.sortable', 'angular-clipboard', 'imageupload', 'ui.bootstrap', 'ui.tinymce'])
 
     .controller('LoginCtrl', function ($scope, TemplateService, NavigationService, $timeout, $state) {
         $scope.menutitle = NavigationService.makeactive("Login");
@@ -138,24 +138,26 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
             });
         };
-
+        $scope.search = '';
+        $scope.searchClick = function (search) {
+            $scope.search = search;
+            console.log($scope.search);
+            search = $scope.search;
+            $scope.getMoreResults(undefined, $scope.search);
+        };
         $http.get("./pageJson/" + jsonName + ".json").success(function (data) {
             _.each(data.urlFields, function (n, key) {
                 urlParams[n] = jsonArr[key + 1];
             });
-            console.log(urlParams);
             $scope.json = data;
-            console.log($scope.json);
             if ($scope.json.sidemenu && $scope.json.sidemenu.length > 0) {
                 $scope.sidemenuThere = true;
             }
             var idForCreate = $location.absUrl().split('%C2%A2')[1];
 
-            console.log(idForCreate);
             $scope.idForCreate = idForCreate;
             if (idForCreate) {
                 $scope.goToCreatePage = function () {
-                    console.log("In create");
                     $location.url("/page/" + $scope.json.createButtonUrl + idForCreate);
                 };
 
@@ -178,7 +180,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 _.each($scope.json.fields, function (n) {
                     if (n.type == "selectFromTable") {
                         NavigationService.getDropDown(n.url, function (data) {
-                            console.log(data);
                             n.dropdownvalues = [];
                             if (data) {
                                 for (var i = 0; i < data.data.length; i++) {
@@ -199,11 +200,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 });
             } else if (data.pageType == "edit" || data.pageType == "tableview") {
 
-                console.log(urlParams);
                 NavigationService.findOneProject($scope.json.preApi.url, urlParams, function (data) {
-                    console.log(data);
+
                     $scope.json.editData = data.data;
-                    console.log($scope.json.editData);
                     _.each($scope.json.fields, function (n) {
                         if (n.type == "table") {
                             $scope.subTableData = $scope.json.editData[n.model];
@@ -216,11 +215,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 }, function () {
                     console.log("Fail");
                 });
+
                 // get select fields dropdown
                 _.each($scope.json.fields, function (n) {
                     if (n.type == "selectFromTable") {
                         NavigationService.getDropDown(n.url, function (data) {
-                            console.log(data);
                             n.dropdownvalues = [];
                             if (data) {
                                 for (var i = 0; i < data.data.length; i++) {
@@ -239,73 +238,72 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                         });
                     }
                 });
+
             } else if (data.pageType == "view") {
+
+
                 // call api for view data
                 $scope.apiName = $scope.json.apiCall.url;
 
                 var pageno = 1;
-                console.log($stateParams.no);
                 if ($stateParams.no) {
                     pageno = parseInt($stateParams.no);
                 }
+                if ($stateParams.search) {
+                    $scope.search = $stateParams.search;
+                }
                 $scope.pagination = {
-                    "search": "",
+                    "search": $scope.search,
                     "pagenumber": pageno,
                     "pagesize": 10
                 };
-                console.log($scope.pagination);
                 // SIDE MENU DATA
 
                 $scope.pagination1 = {};
                 if (urlid1) {
-                    console.log('urlid1', urlid1);
                     if ($scope.json.sendIdWithCreate) {
                         $scope.json.createButtonState = $scope.json.createButtonState.split("'" + "})").join("¢" + urlid1 + "'" + "})");
                         // $scope.json.createButtonState = $scope.json.createButtonState.split("%25C2%").join("%C2%");
                         // $scope.json.createButtonState = $scope.json.createButtonState.split("%25A2").join("%A2");
                     }
-                    console.log($scope.json.createButtonState);
                     $scope.api1 = $scope.json.sidemenu[1].callFindOne;
                     if ($scope.json.sidemenu[1].sendParam && $scope.json.sidemenu[1].sendParam !== '') {
-                        // ARRAY
-                        // $scope.pagination1._id = urlid1;
                         $scope.pagination1._id = urlid1;
-                        // NavigationService.sideMenu1($scope.api1, $scope.pagination1, function(data) {
-                        //     if (data.data.nominee) {
-                        //         $scope.json.tableData = data.data;
-                        //         console.log("IF");
-                        //         console.log($scope.json.tableData);
-                        //     }
-                        // }, function() {
-                        //     console.log("fail");
-                        // });
                     } else {
                         console.log("ELSE");
                         $scope.pagination._id = urlid1;
-                        // NavigationService.sideMenu1($scope.api1, $scope.pagination, function(data) {
-                        //     $scope.json.tableData = data.data.data;
-                        //     console.log($scope.json.tableData);
-                        // }, function() {
-                        //     console.log("fail");
-                        // });
                     }
                 }
                 // call api for view data
                 $scope.apiName = $scope.json.apiCall.url;
                 $scope.pageInfo = {
-                    totalitems: 100
+                    totalitems: 5000
                 };
-                $scope.getMoreResults = function (value) {
+            
+                $scope.getMoreResults = function (value, search) {
+                    $scope.search = search;
+                    $scope.value = value;
                     if (value) {
-                        console.log($scope.pagination);
+                        if ($scope.search === undefined) {
+                            $scope.search = $stateParams.search;
+                            console.log($scope.search);
+                        }
+
+
                         $state.go("pageno", {
                             no: $scope.pagination.pagenumber,
-                            jsonName: $stateParams.jsonName
+                            jsonName: $stateParams.jsonName,
+                            search: $scope.search
                         });
                     } else {
-                        console.log($scope.pagination);
+                        if ($scope.search) {
+                            $scope.pagination.search = $scope.search;
+                        } else if ($scope.pagination.search) {
+                            $scope.pagination.search = $scope.pagination.search;
+                        } else {
+                            $scope.pagination.search = '';
+                        }
                         NavigationService.findProjects($scope.apiName, $scope.pagination, function (findData) {
-                            console.log(findData);
                             if (findData.value !== false) {
                                 if (findData.data && findData.data.data && findData.data.data.length > 0) {
                                     $scope.pageInfo.lastpage = findData.data.totalpages;
@@ -314,9 +312,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                                     $scope.json.tableData = findData.data.data;
                                 } else {
                                     $scope.json.tableData = [];
+                                    $scope.pageInfo.totalitems = 0;
                                 }
                             } else {
                                 $scope.json.tableData = [];
+                                $scope.pageInfo.totalitems = 0;
                             }
                             console.log($scope.pagination);
                         }, function () {
@@ -325,10 +325,263 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                     }
 
                 };
+                var pagenumber = $scope.pagination.pagenumber;
+                console.log(pagenumber);
                 $scope.getMoreResults();
+                $scope.getAssistance = function (status, fromDate, toDate, pagenumber) {
+                    console.log(pagenumber);
+                    NavigationService.getAssistance(status, fromDate, toDate, pagenumber, function (data) {
+                            console.log(data);
+                        },
+                        function () {
+                            console.log("Fail");
+                        });
+                }
+                //SEARCH DROP dropDownName
+
+                // get select fields dropdown
+                if ($scope.json.apiCallForSearch) {
+                    NavigationService.getDropDown($scope.json.apiCallForSearch.url, function (data) {
+
+                        dropdownvalues = [];
+                        if (data) {
+                            for (var i = 0; i < data.data.length; i++) {
+                                var dropdown = {};
+                                dropdown._id = data.data[i]._id;
+                                dropdown.name = data.data[i].name;
+                                dropdownvalues.push(dropdown);
+                            }
+                        }
+                        $scope.dropdownvalues = dropdownvalues;
+                        console.log(dropdownvalues);
+                    }, function () {
+                        console.log("Fail");
+                    });
+                }
+                if ($scope.json.apiCallForSearch1) {
+                    NavigationService.getDropDown($scope.json.apiCallForSearch1.url, function (data) {
+
+                        dropdownvalues1 = [];
+                        if (data) {
+                            for (var i = 0; i < data.data.length; i++) {
+                                var dropdown = {};
+                                dropdown._id = data.data[i]._id;
+                                dropdown.name = data.data[i].name;
+                                dropdownvalues1.push(dropdown);
+                            }
+                        }
+                        $scope.dropdownvalues1 = dropdownvalues1;
+                        console.log(dropdownvalues1);
+                    }, function () {
+                        console.log("Fail");
+                    });
+                }
+                $scope.callExportApi = function (title) {
+                    NavigationService.callExportApi(title, function (data) {
+                        console.log(data);
+                    }, function () {
+                        console.log("Fail");
+                    });
+                }
+                $scope.refreshPage = function () {
+                    window.location.reload();
+                }
+              
             }
             $scope.template = TemplateService.jsonType(data.pageType);
         });
+
+        // $http.get("./pageJson/" + jsonName + ".json").success(function (data) {
+        //     _.each(data.urlFields, function (n, key) {
+        //         urlParams[n] = jsonArr[key + 1];
+        //     });
+        //     console.log(urlParams);
+        //     $scope.json = data;
+        //     console.log($scope.json);
+        //     if ($scope.json.sidemenu && $scope.json.sidemenu.length > 0) {
+        //         $scope.sidemenuThere = true;
+        //     }
+        //     var idForCreate = $location.absUrl().split('%C2%A2')[1];
+
+        //     console.log(idForCreate);
+        //     $scope.idForCreate = idForCreate;
+        //     if (idForCreate) {
+        //         $scope.goToCreatePage = function () {
+        //             console.log("In create");
+        //             $location.url("/page/" + $scope.json.createButtonUrl + idForCreate);
+        //         };
+
+        //     }
+        //     if (data.pageType == "create") {
+        //         $scope.goToCancelPageCreate = function () {
+        //             $location.url("/page/" + $scope.json.action[1].url + idForCreate);
+        //         };
+        //         _.each($scope.json.fields, function (n) {
+        //             if (n.type == "select") {
+        //                 n.model = "";
+        //                 if (n.name == "Status") {
+        //                     n.model = true;
+        //                 }
+        //             } else if (n.type == "selectFromTable") {
+        //                 n.model = "";
+        //             }
+        //         });
+        //         // get select fields dropdown
+        //         _.each($scope.json.fields, function (n) {
+        //             if (n.type == "selectFromTable") {
+        //                 NavigationService.getDropDown(n.url, function (data) {
+        //                     console.log(data);
+        //                     n.dropdownvalues = [];
+        //                     if (data) {
+        //                         for (var i = 0; i < data.data.length; i++) {
+        //                             var dropdown = {};
+        //                             dropdown._id = data.data[i]._id;
+        //                             if (!n.dropDownName) {
+        //                                 dropdown.name = data.data[i].name;
+        //                             } else {
+        //                                 dropdown.name = data.data[i][n.dropDownName];
+        //                             }
+        //                             n.dropdownvalues.push(dropdown);
+        //                         }
+        //                     }
+        //                 }, function () {
+        //                     console.log("Fail");
+        //                 });
+        //             }
+        //         });
+        //     } else if (data.pageType == "edit" || data.pageType == "tableview") {
+
+        //         console.log(urlParams);
+        //         NavigationService.findOneProject($scope.json.preApi.url, urlParams, function (data) {
+        //             console.log(data);
+        //             $scope.json.editData = data.data;
+        //             console.log($scope.json.editData);
+        //             _.each($scope.json.fields, function (n) {
+        //                 if (n.type == "table") {
+        //                     $scope.subTableData = $scope.json.editData[n.model];
+        //                 }
+        //                 if (n.type == "time" || n.type == "date") {
+        //                     $scope.json.editData[n.model] = new Date($scope.json.editData[n.model]);
+        //                 }
+
+        //             });
+        //         }, function () {
+        //             console.log("Fail");
+        //         });
+        //         // get select fields dropdown
+        //         _.each($scope.json.fields, function (n) {
+        //             if (n.type == "selectFromTable") {
+        //                 NavigationService.getDropDown(n.url, function (data) {
+        //                     console.log(data);
+        //                     n.dropdownvalues = [];
+        //                     if (data) {
+        //                         for (var i = 0; i < data.data.length; i++) {
+        //                             var dropdown = {};
+        //                             dropdown._id = data.data[i]._id;
+        //                             if (!n.dropDownName) {
+        //                                 dropdown.name = data.data[i].name;
+        //                             } else {
+        //                                 dropdown.name = data.data[i][n.dropDownName];
+        //                             }
+        //                             n.dropdownvalues.push(dropdown);
+        //                         }
+        //                     }
+        //                 }, function () {
+        //                     console.log("Fail");
+        //                 });
+        //             }
+        //         });
+        //     } else if (data.pageType == "view") {
+        //         // call api for view data
+        //         $scope.apiName = $scope.json.apiCall.url;
+
+        //         var pageno = 1;
+        //         console.log($stateParams.no);
+        //         if ($stateParams.no) {
+        //             pageno = parseInt($stateParams.no);
+        //         }
+        //         $scope.pagination = {
+        //             "search": "",
+        //             "pagenumber": pageno,
+        //             "pagesize": 10
+        //         };
+        //         console.log($scope.pagination);
+        //         // SIDE MENU DATA
+
+        //         $scope.pagination1 = {};
+        //         if (urlid1) {
+        //             console.log('urlid1', urlid1);
+        //             if ($scope.json.sendIdWithCreate) {
+        //                 $scope.json.createButtonState = $scope.json.createButtonState.split("'" + "})").join("¢" + urlid1 + "'" + "})");
+        //                 // $scope.json.createButtonState = $scope.json.createButtonState.split("%25C2%").join("%C2%");
+        //                 // $scope.json.createButtonState = $scope.json.createButtonState.split("%25A2").join("%A2");
+        //             }
+        //             console.log($scope.json.createButtonState);
+        //             $scope.api1 = $scope.json.sidemenu[1].callFindOne;
+        //             if ($scope.json.sidemenu[1].sendParam && $scope.json.sidemenu[1].sendParam !== '') {
+        //                 // ARRAY
+        //                 // $scope.pagination1._id = urlid1;
+        //                 $scope.pagination1._id = urlid1;
+        //                 // NavigationService.sideMenu1($scope.api1, $scope.pagination1, function(data) {
+        //                 //     if (data.data.nominee) {
+        //                 //         $scope.json.tableData = data.data;
+        //                 //         console.log("IF");
+        //                 //         console.log($scope.json.tableData);
+        //                 //     }
+        //                 // }, function() {
+        //                 //     console.log("fail");
+        //                 // });
+        //             } else {
+        //                 console.log("ELSE");
+        //                 $scope.pagination._id = urlid1;
+        //                 // NavigationService.sideMenu1($scope.api1, $scope.pagination, function(data) {
+        //                 //     $scope.json.tableData = data.data.data;
+        //                 //     console.log($scope.json.tableData);
+        //                 // }, function() {
+        //                 //     console.log("fail");
+        //                 // });
+        //             }
+        //         }
+        //         // call api for view data
+        //         $scope.apiName = $scope.json.apiCall.url;
+        //         $scope.pageInfo = {
+        //             totalitems: 100
+        //         };
+        //         $scope.getMoreResults = function (value) {
+        //             if (value) {
+        //                 console.log($scope.pagination);
+        //                 $state.go("pageno", {
+        //                     no: $scope.pagination.pagenumber,
+        //                     jsonName: $stateParams.jsonName
+        //                 });
+        //             } else {
+        //                 console.log($scope.pagination);
+        //                 NavigationService.findProjects($scope.apiName, $scope.pagination, function (findData) {
+        //                     console.log(findData);
+        //                     if (findData.value !== false) {
+        //                         if (findData.data && findData.data.data && findData.data.data.length > 0) {
+        //                             $scope.pageInfo.lastpage = findData.data.totalpages;
+        //                             $scope.pageInfo.pagenumber = findData.data.pagenumber;
+        //                             $scope.pageInfo.totalitems = $scope.pagination.pagesize * findData.data.totalpages;
+        //                             $scope.pagination.pagesize=findData.data.totalpages;
+        //                             $scope.json.tableData = findData.data.data;
+        //                         } else {
+        //                             $scope.json.tableData = [];
+        //                         }
+        //                     } else {
+        //                         $scope.json.tableData = [];
+        //                     }
+        //                     console.log($scope.pagination);
+        //                 }, function () {
+        //                     console.log("Fail");
+        //                 });
+        //             }
+
+        //         };
+        //         $scope.getMoreResults();
+        //     }
+        //     $scope.template = TemplateService.jsonType(data.pageType);
+        // });
 
         // ACTION
         $scope.performAction = function (action, result) {
